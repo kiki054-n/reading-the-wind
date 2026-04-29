@@ -5,6 +5,17 @@
 > この理論の目的は、予想である。」
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
+この作品は [クリエイティブ・コモンズ 表示 4.0 国際ライセンス][cc-by] の下に提供されています。
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
+
 [![関連：令和の国体論](https://img.shields.io/badge/関連リポジトリ-令和の国体論-blue)](https://kiki054-n.github.io/National-Polity-Theory/)
 
 ---
