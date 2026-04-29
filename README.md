@@ -7,8 +7,6 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 
-[![CC BY 4.0][cc-by-shield]][cc-by]
-
 この作品は [クリエイティブ・コモンズ 表示 4.0 国際ライセンス][cc-by] の下に提供されています。
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
