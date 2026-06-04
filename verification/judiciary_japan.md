@@ -477,6 +477,7 @@ zZの回復なしに、「国民のための国家」は実現しない。vVが�
 - [E式（動的記述）](../theory/03_E_dynamic.md)
 - [第7項以降の変数の検討](../theory/04_variables.md)
 - [検証事例：砂川事件](sunagawa.md)
+- [検証事例：日独司法比較](judiciary_japan_germany.md)
 - [記録テンプレート](../log/template.md)
 
 ---
