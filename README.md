@@ -6,13 +6,11 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-
 この作品は [クリエイティブ・コモンズ 表示 4.0 国際ライセンス][cc-by] の下に提供されています。
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
-
 
 [![関連：令和の国体論](https://img.shields.io/badge/関連リポジトリ-令和の国体論-blue)](https://kiki054-n.github.io/National-Polity-Theory/)
 
@@ -83,8 +81,6 @@ P = xX + yY + zZ + Uu + vV + wW
 | **vV** | 流体・意思の流れ | 水蒸気フラックス | 国民意思・市場心理・動機 |
 | **wW** | エネルギー移流 | 熱移流・潜熱 | 正統性・信頼・動機のエネルギー |
 
-**第7項以降**（hH：前歴、sS：規模、eE：境界条件、nN：非線形臨界、cC：連鎖、dD：散逸…）は、予想と現実の乖離を検証することで発見されていく。
-
 > 正確な値を算出する以上に、**各変数の「有無」を判断すること**が、この式の実践的な使い方である。
 
 → 詳細：[theory/02_TTT_static.md](theory/02_TTT_static.md)
@@ -112,6 +108,134 @@ TTT式が「今の状態のスナップショット」であるとすれば、E�
 
 ---
 
+## 変数地図 — 第7項以降
+
+乖離の検証を通じて発見された追加変数。**値より「有無の判断」が先**という原則で運用する。
+
+| 変数 | 名称 | 状態 |
+|------|------|------|
+| hH | 前歴・履歴 | ✅ 確定 |
+| sS | スケール・規模 | ✅ 確定 |
+| eE | 境界条件・外部環境 | ✅ 確定 |
+| nN | 非線形臨界 | 🔶 要検討 |
+| cC | 連鎖・カスケード | 🔶 要検討 |
+| dD | 散逸・抵抗 | 🔶 要検討 |
+| aA | AI・技術基盤 | 🔷 候補 |
+| fF | フィードバック・自己修正機構 | 🔷 候補 |
+| kK | 鍵・転換条件 | 🔷 候補 |
+| mM | 信認・集合的信念 | 🔷 候補 |
+| gG | 世代間非対称 | 🔷 候補 |
+| ρR | 名実乖離 | 🔷 候補 |
+| βB | 移動性の非対称 | 🔷 候補 |
+| σS | 代替可能性 | 🔷 候補 |
+| τT | 適応時間差 | 🔷 候補 |
+
+> *乖離の中に、次の変数が眠っている。*
+
+→ 詳細：[theory/04_variables.md](theory/04_variables.md)
+
+---
+
+## 検証・応用の記録
+
+### 🌧 気象予報（2024年 山形・能登大雨）
+
+- `vV × zZ` の積が臨界値を超えた時点で線状降水帯の形成が予想できた
+- 能登事例では、地震後の地盤脆弱化という **hH（前歴）** が欠落していたことが判明
+- 発見：有無の判断だけで予想の方向性が変わる
+
+→ [verification/weather_2024.md](verification/weather_2024.md)
+
+---
+
+### ⚖️ 日本の司法機能不全
+
+- 三権分立球体を押した時、**zZ係数≒0**（77年間で違憲判決13件）という数字的診断
+- 統治行為論は zZ を自己無効化する装置として機能
+- **fF（自己修正機構）が形式的にしか存在しない**構造の解剖
+
+→ [verification/judiciary_japan.md](verification/judiciary_japan.md)
+
+---
+
+### 🏛 砂川事件・統治行為論（1959年）
+
+- **eE（米国圧力）がzZを直接上書きした**構造的事件
+- iI（密談）がrR（判決）に転換した瞬間の記録
+- 66年間にわたりiI（潜在規範）として日本の司法構造を規定し続けている
+
+→ [verification/sunagawa.md](verification/sunagawa.md)
+
+---
+
+### 🇩🇪 日独司法比較
+
+- 同じ「戦後出発」から77年後に**約30,000倍のzZ係数差**が生まれた原因を解剖
+- **fF（自己修正機構）の有無**と**kK（転換条件）の設計**の差が根本原因
+- hHへの向き合い方の差：日本は「封印」、ドイツは「設計原理への統合」
+- 命題：*fF × kKの組み合わせが、iIの運命を決める*
+
+→ [verification/judiciary_japan_germany.md](verification/judiciary_japan_germany.md)
+
+---
+
+### 🇺🇸 トランプ第2期とアメリカの行方
+
+- yY（行政権）の急拡大と fF（連邦裁判所）の圧迫を変数で診断
+- **「fFはまだ機能しているか」「kKが封鎖されていないか」** の二点が観測の核心
+- 三シナリオ：均衡維持 / 制度的転換点超過 / 経済的nN超過
+- 日本への含意：eEとしてのアメリカが不安定化した時のω再設定の問い
+
+→ [application/usa_trump2.md](application/usa_trump2.md)
+
+---
+
+### 💰 お金の本質変容とひずみの蓄積
+
+- 金本位制の喪失 = **fF（物理的制約）の喪失**という診断
+- 社会主義・資本主義分岐の OOπ診断（二つのωへの分裂）
+- 新変数の発見：**mM（信認・集合的信念）**・**gG（世代間非対称）**・**ρR（名実乖離）**
+- 命題：*mMが揺らぐ時、fFが逆向きに走り始める（ハイパーインフレ・取り付け騒ぎの構造）*
+
+→ [application/money_and_distortion.md](application/money_and_distortion.md)
+
+---
+
+### 📈 株価と労働対価の乖離
+
+- 乖離の5層構造：ωの転換（株主優先主義）/ fF切断 / QEによるρR拡大 / 移動性非対称 / gG
+- 新変数の発見：**βB（移動性の非対称）** — 資本はグローバルに移動できるが労働はできない
+- 命題：*βB縮小（国際協調）なしのρR是正は、資本逃避によって無効化される*
+- 是正の核心：βBを縮小し、fFを再設計し、ωを変える「制度の設計」
+
+→ [application/stock_labor_divergence.md](application/stock_labor_divergence.md)
+
+---
+
+### 🤖 肉体労働→精神労働→AI転換
+
+- 産業革命のfF（「次の仕事に移れる」）がAI転換では機能しない5条件の崩壊を解析
+- 新変数の発見：**σS（代替可能性）**・**τT（適応時間差）**
+- 核心公式：*iI蓄積速度 ∝ σS × τT*
+- AIのβB≒ゼロが労働問題の上位構造を変えるという命題
+- 未解決の問い：「AIが働く世界で、人間は何のために生きるか」→ μM（意味充足）として次の探索へ
+
+→ [application/labor_transformation.md](application/labor_transformation.md)
+
+---
+
+### 🏛 令和の国体論・社会OS転換
+
+- 「国のために国民がいる」から「国民のために国家がある」へのω反転を設計
+- vV（国民意思）が直接zZを動かせる経路（憲法訴願制度）の設計論
+- iI（転換への欲求）が蓄積する中、kKを開く条件の特定
+
+→ [application/national_polity.md](application/national_polity.md)
+→ [application/social_os.md](application/social_os.md)
+→ [application/constitutional_petition.md](application/constitutional_petition.md)
+
+---
+
 ## 検証の方法 — 三列比較
 
 予想と現実を三列で並べ、乖離を記録する。
@@ -134,49 +258,7 @@ TTT式が「今の状態のスナップショット」であるとすれば、E�
 
 ---
 
-## 検証済み領域と主な発見
-
-### 🌧 気象予報（2024年 山形・能登大雨）
-
-- `vV × zZ` の積が臨界値を超えた時点で線状降水帯の形成が予想できた
-- 地形による強制上昇（yY→zZ変換）が山間部で過小評価されやすい「裏面の変形」
-- 能登事例では、地震後の地盤脆弱化という **hH（前歴）という第7項** が欠落していたことが判明
-
-→ [verification/weather_2024.md](verification/weather_2024.md)
-
----
-
-### ⚖️ 司法機能不全（日本最高裁）
-
-- 三権分立という「球体」を押した時、xX・zZはほとんど変形せず、yYだけが過大に変形する**非対称球体**になっている
-- 戦後77年間で法令違憲判決13件という事実が、**zZ係数≒0** の数字的証拠
-- 統治行為論は「高度の政治性」という名のもとにzZを自己無効化する装置
-
-→ [verification/judiciary_japan.md](verification/judiciary_japan.md)
-
----
-
-### 🏛 砂川事件・統治行為論（1959年）
-
-- **eE（外部圧力）がzZを上書きした**構造的事件
-- 田中最高裁長官と米側の密談が、iI（潜在的な外部介入）として存在し、判決というrRに転換した
-- この一事件が66年間にわたりiI（潜在規範）として日本の司法構造を規定し続けている
-
-→ [verification/sunagawa.md](verification/sunagawa.md)
-
----
-
-### 🇩🇪 日独司法比較
-
-- ドイツはhH（ナチズムの前歴）をzZの設計原理に統合した
-- 日本はhHを回避することでzZを無効化した
-- **同じ敗戦国でも、前歴への向き合い方がzZ係数の差として70年後に現れている**
-
-→ [verification/germany_compare.md](verification/germany_compare.md)
-
----
-
-## 風を読む — 実践的な七つの問い
+## 風を読む — 実践的な問い
 
 あなた自身の領域で、次の問いを立ててみてほしい。
 
@@ -186,7 +268,9 @@ TTT式が「今の状態のスナップショット」であるとすれば、E�
 4. **見えていない変数（iI）はどこに潜んでいるか？**
 5. **前歴（hH）は現在の状態に影響しているか？**
 6. **変化率（Uu）は加速しているか、減速しているか、ゼロに近づいているか？**
-7. **予想と現実が乖離した時、欠落していた変数は何か？**
+7. **fF（自己修正機構）はまだ機能しているか？**
+8. **kK（転換条件）は開いているか、封鎖されているか？**
+9. **予想と現実が乖離した時、欠落していた変数は何か？**
 
 ---
 
@@ -229,9 +313,10 @@ Issue の書き方（自由形式でよい）：
 - 予想した裏面：
 - 実際に起きたこと：
 - 乖離と考察：
+- 候補となる欠落変数：
 ```
 
-気象・医療・教育・経営・政治・スポーツ・芸術・農業——
+気象・医療・教育・経営・政治・経済・スポーツ・芸術・農業——
 この理論が広範囲に適用できるかどうかを、一緒に確かめていきたい。
 
 ---
@@ -241,36 +326,40 @@ Issue の書き方（自由形式でよい）：
 ```
 reading-the-wind/
 │
-├── README.md                        # この文書（理論の入口）
-├── LICENSE                          # CC BY 4.0
+├── README.md                          # この文書（理論の入口）
+├── LICENSE                            # CC BY 4.0
 │
-├── theory/                          # 理論の核心
-│   ├── 01_OOpi.md                  # OOπ理論：見えない裏面を読む
-│   ├── 02_TTT_static.md            # TTT静的記述式
-│   ├── 03_E_dynamic.md             # E式動的記述
-│   └── 04_variables.md             # 第7項以降の変数の検討
+├── theory/                            # 理論の核心
+│   ├── 01_OOpi.md                    # OOπ理論：見えない裏面を読む
+│   ├── 02_TTT_static.md              # TTT静的記述式
+│   ├── 03_E_dynamic.md               # E式動的記述
+│   └── 04_variables.md               # 第7項以降の変数（20セクション・15変数）
 │
-├── verification/                    # 検証事例
-│   ├── weather_2024.md             # 気象予報への適用（山形・能登）
-│   ├── judiciary_japan.md          # 司法機能不全の分析
-│   ├── sunagawa.md                 # 砂川事件・統治行為論
-│   └── germany_compare.md          # ドイツ憲法裁判所との比較
+├── verification/                      # 検証事例
+│   ├── weather_2024.md               # 気象予報への適用（山形・能登）
+│   ├── judiciary_japan.md            # 日本の司法機能不全
+│   ├── sunagawa.md                   # 砂川事件・統治行為論
+│   └── judiciary_japan_germany.md    # 日独司法比較（fF・kKの設計差）
 │
-├── application/                     # 理論の応用
-│   ├── national_polity.md          # 国体論への適用
-│   ├── constitutional_petition.md  # 憲法訴願制度設計
-│   └── social_os.md                # 社会OSの転換論
+├── application/                       # 理論の応用・風読み
+│   ├── national_polity.md            # 令和の国体論
+│   ├── constitutional_petition.md    # 憲法訴願制度設計
+│   ├── social_os.md                  # 社会OSの転換論
+│   ├── usa_trump2.md                 # トランプ第2期とアメリカの行方
+│   ├── money_and_distortion.md       # お金の本質変容とひずみ（mM・gG・ρR）
+│   ├── stock_labor_divergence.md     # 株価と労働対価の乖離（βB）
+│   └── labor_transformation.md       # 肉体→精神→AI転換（σS・τT）
 │
-├── methods/                         # 風を読む実践的方法論
-│   ├── how_to_read_wind.md         # 見えないものを読む手順
-│   ├── flight_plan.md              # フライトプランの設計法
-│   └── discrepancy_log.md          # 予想と現実の乖離記録の蓄積
+├── methods/                           # 風を読む実践的方法論
+│   ├── how_to_read_wind.md           # 見えないものを読む手順
+│   ├── flight_plan.md                # フライトプランの設計法
+│   └── discrepancy_log.md            # 予想と現実の乖離記録の蓄積
 │
-├── log/                             # 考察の記録（日付順）
-│   ├── template.md                 # 記録テンプレート
-│   └── YYYY-MM.md                  # 月次記録
+├── log/                               # 考察の記録（日付順）
+│   ├── template.md                   # 記録テンプレート
+│   └── YYYY-MM.md                    # 月次記録
 │
-└── docs/                            # GitHub Pages用（Web公開）
+└── docs/                              # GitHub Pages用（Web公開）
     └── index.html
 ```
 
