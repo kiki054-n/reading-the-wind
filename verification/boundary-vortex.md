@@ -2,7 +2,7 @@
 ## The Boundary Vortex: Zero as the Seat of Reversal
 
 > 川上真潔 — トリテトラ理論考察記録
-> reading-the-wind 第◯章（2026年6月）
+> reading-the-wind 第４章（2026年6月11日）
 
 ---
 
