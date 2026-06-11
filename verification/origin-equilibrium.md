@@ -2,7 +2,7 @@
 ## Equilibrium at the Origin: Six Opposing Quantities and the Axis of Time
 
 > 川上真潔 — トリテトラ理論考察記録
-> reading-the-wind 第◯章（2026年6月）
+> reading-the-wind 第５章（2026年6月11日）
 > 前章「境界の渦」に続く
 
 ---
