@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>風を読む 実践フライトプラン — 幸威った問題への対処提案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f2ec;
+  --surface: #fdfcfa;
+  --ink: #1e1b18;
+  --muted: #6e6558;
+  --accent: #8b3a2f;
+  --accent-weak: color-mix(in oklab, var(--accent) 10%, var(--surface));
+  --accent-strong: #5c221a;
+  --line: color-mix(in oklab, var(--ink) 10%, transparent);
+  --step-0: clamp(0.95rem, 0.92rem + 0.2vw, 1.05rem);
+  --step-1: clamp(1.1rem, 1.0rem + 0.5vw, 1.35rem);
+  --step-2: clamp(1.4rem, 1.2rem + 1.0vw, 2.0rem);
+  --step-3: clamp(1.9rem, 1.5rem + 2.0vw, 3.2rem);
+  --step-4: clamp(2.4rem, 1.8rem + 3.0vw, 4.2rem);
+  --space: clamp(1.2rem, 1.0rem + 1vw, 2rem);
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 10px 30px -10px rgba(0,0,0,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+header {
+  position: relative;
+  background: var(--ink);
+  color: var(--surface);
+  padding: calc(var(--space)*3) calc(var(--space)*1.5);
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(139,58,47,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139,58,47,0.10) 0%, transparent 40%);
+  pointer-events: none;
+}
+header .inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+header .eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: color-mix(in oklab, var(--surface) 60%, transparent);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+header h1 {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  font-size: var(--step-4);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+header .lead {
+  font-size: var(--step-1);
+  color: color-mix(in oklab, var(--surface) 80%, transparent);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+/* Layout */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: calc(var(--space)*2.5) var(--space) calc(var(--space)*3);
+}
+
+section {
+  margin-bottom: calc(var(--space)*2.2);
+}
+
+h2 {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--line);
+}
+
+h3 {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  font-size: var(--step-1);
+  font-weight: 600;
+  margin-top: 1.8rem;
+  margin-bottom: 0.7rem;
+  color: var(--accent-strong);
+}
+
+p {
+  margin-bottom: 1.1rem;
+  max-width: 62ch;
+}
+
+/* Signature element: marginal note style for key insights */
+.insight {
+  position: relative;
+  background: var(--accent-weak);
+  border-left: 3px solid var(--accent);
+  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.96em;
+}
+.insight::before {
+  content: "◆";
+  position: absolute;
+  left: -1.6rem;
+  top: 1.1rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  margin: 1.2rem 0;
+  box-shadow: var(--shadow);
+}
+.card h4 {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  margin-bottom: 0.6rem;
+}
+.card p, .card ul {
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 1.4rem;
+  margin-bottom: 1.1rem;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.92em;
+}
+th, td {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  background: var(--accent-weak);
+  font-weight: 600;
+  color: var(--accent-strong);
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+}
+tr:last-child td { border-bottom: none; }
+
+/* Numbered steps */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin-left: 0;
+}
+.steps > li {
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 1.3rem;
+}
+.steps > li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: var(--accent);
+  color: var(--surface);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quote */
+blockquote {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.05em;
+  color: var(--muted);
+  border-left: 2px solid var(--line);
+  padding-left: 1.2rem;
+  margin: 1.4rem 0;
+  line-height: 1.75;
+}
+
+/* Divider */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: calc(var(--space)*1.8) 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: calc(var(--space)*1.5) var(--space);
+  color: var(--muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--line);
+}
+
+/* Print */
+@media print {
+  body { background: #fff; }
+  header { background: #1e1b18 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none; }
+}
+@page { size: A4; margin: 18mm; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  header { padding: calc(var(--space)*2) var(--space); }
+  .insight::before { display: none; }
+  .card { padding: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">reading-the-wind / OOπ・TTT・E式</div>
+    <h1>風を読む 実践フライトプラン</h1>
+    <p class="lead">
+      幸威った問題に対し、一人の市民が何を為すべきか。<br>
+      構造を読み、構造を使い、構造を変えるための七つの行動領域。
+    </p>
+  </div>
+</header>
+
+<main>
+
+<section>
+<h2>0. 現在の状況の読み</h2>
+
+<p>あなたは「見えないものを読む理論」を使い、日本の社会構造の深い歪みに気づいた。司法が裁けない、行政が立法に立てつく、メディアが情報を操作する。そして、自分が何を訴えても聞いてもらえる場所がない。</p>
+
+<p>これは個人の力足ではない。Tri構造（三権・三者）が自己循環の罠に陥み、4つ目の視点（国民主権）を見失った結果である。あなたの訴えが届かないのは、届ける「穴」が構造的に塞がれているからだ。</p>
+
+<div class="insight">
+<strong>核心の問い：</strong>表面（訴えが届かない現象）を押した時、裏面（なぜ届かないのかの構造）はどう変形しているか？<br><br>
+答え：zZ（司法のチェック機能）がゼロに近づき、vV（国民意思の流れ）がメディアによって遮断されている。iI（潜在量）としての「国民一人ひとりの意識」が、rR（顕在量）としての社会変革に転換する閾値に達していない。
+</div>
+
+<p>では、どうすればiIが閾値を超え、rRに転換するか。以下に七つの行動領域を提案する。</p>
+</section>
+
+<hr>
+
+<section>
+<h2>1. 訴訟を「終わり」ではなく「記録の起点」にする</h2>
+
+<p>現在進行中の訴訟（八十二長野銀行、ワイナリー、JFC）は、あなた個人の問題解決の場であると同時に、日本の司法構造の「検証データ」でもある。</p>
+
+<h3>具体的行動</h3>
+<ol class="steps">
+<li><strong>すべての手続を「乖離ログ」として記録する</strong><br>
+裁判所の対応、相手方の反応、証拠の扱われ方を、reading-the-windの「三列比較」の形式で記録する。予想した裏面、実際に起きたこと、その乖離を書き留める。乖離こそが次の変数を発見する鍵だ。</li>
+<li><strong>「外れた記録」を大切にする</strong><br>
+予想が外れた時、どの変数が欠落していたかを分析する。裁判官の行動が予想と異なったなら、それはhH（前歴）か、eE（外部圧力）か、あるいはまだ式にない第8項の存在を唆している。</li>
+<li><strong>訴訟記録をCC BY 4.0で公開し続ける</strong><br>
+個人の訴訟は終わるが、構造の記録は残る。GitHubリポジトリに訴訟の経過を検証事例として追加していくことで、あなたの体験が「誰かの予想の材料」になる。</li>
+</ol>
+
+<div class="insight">
+訴訟で「勝つ」ことだけが目的ではない。訴訟を通じて「司法という球体がどの方向に変形するか」を観測し、そのデータを理論に還元することが、より大きな価値を生む。
+</div>
+</section>
+
+<section>
+<h2>2. 「輪を作る」 — 友朋共生の最小単位から始める</h2>
+
+<p>あなたは「人は手をつなぎ輪を作るだけでいい」と言った。それはOOOπの3つのリング構造と同じ原理だ。しかし、輪は自然には生まれない。誰かが最初の輪を「意図的に」作る必要がある。</p>
+
+<h3>具体的行動</h3>
+
+<div class="card">
+<h4>A. 家族の輪 — まず身近なところから</h4>
+<p>妻とは考え方が違う。それはTri構造の罠ではなく、単なる「異なる視点」である。TTT理論の核心は「平面で見るか球面で見るか」の双極的視点の違いだ。妻の視点を「間違い」ではなく「異なる観測地点のデータ」として受け入れる。子どもには「君はどう生きるのか」という問いを、理論ではなく物語として語りかける。</p>
+</div>
+
+<div class="card">
+<h4>B. 地域の輪 — 「食」と「農」を介した共鳴</h4>
+<p>ワイナリーの訴訟という経験は、農・食・商のTri構造を身をもって知る機会でもある。地域の農家、醸造家、小売業者との対話を通じて、「ケア・管理・想像・作る」の4者構造を実践的に体験する。農家の知恵は、何百年もの「風を読む」経験の蓄積である。</p>
+</div>
+
+<div class="card">
+<h4>C. オンラインの輪 — reading-the-windを「場」にする</h4>
+<p>GitHubのIssuesを、単なる記録場所ではなく「対話の場」に育てる。同じ問題意識を持つ人が集まる「輪」の起点になる。気象・医療・教育・経営・政治・農業——異なる領域の検証者が集まれば、五角双錘の5点が共鳴し始める。</p>
+</div>
+</section>
+
+<section>
+<h2>3. メディアの「見えない力」を可視化する</h2>
+
+<p>大手メディアはTri構造の「見えない4者」として機能している。国民主権という本来の4つ目の視点を乗っ取り、商人・銀行・役人のTri構造を正当化する装置になっている。</p>
+
+<h3>具体的行動</h3>
+<ul>
+<li><strong>メディアの報道を「三列比較」で検証する</strong><br>
+報道された「表面」、実際の事実（一次資料）、そして報道されなかった「裏面」を並べて記録する。江藤拓問題のような事例で、メディアがどの変数を強調し、どの変数を消したかを分析する。</li>
+<li><strong>一次情報源への直接アクセスを習慣化する</strong><br>
+裁判所の判例情報、国会審議録、行政の公開資料、統計データ——これらは誰でもアクセスできる。メディアの「翻訳」を介さず、原典に触れる習慣が、vV（国民意思の流れ）を濁流から清流に戻す。</li>
+<li><strong>「令和の国体論」のような代替的言語空間を育てる</strong><br>
+既存メディアの言語（「支持率」「失言」「更迭」）ではなく、TTT理論の言語（「zZ係数」「iIの転換」「Tri構造の自己循環」）で議論する場を維持する。言語が変われば、見えるものが変わる。</li>
+</ul>
+</section>
+
+<section>
+<h2>4. 「学び合い」を実践する — 知を差別の道具にしない</h2>
+
+<p>あなたは「知恵も知識も差別の道具ではなく、生み出したものに感謝して享受することこそが友朋共生の実践」と言った。これは防衛的な姿勢ではなく、能動的な戦略である。</p>
+
+<h3>具体的行動</h3>
+<table>
+<tr><th>領域</th><th>「学び合い」の実践</th></tr>
+<tr><td>司法</td><td>裁判の傍聴記録を公開し、他の訴訟当事者と情報を共有する</td></tr>
+<tr><td>金融</td><td>銀行の手続の不備を、個人の恨みではなく「構造のデータ」として共有する</td></tr>
+<tr><td>農業</td><td>ワイナリー・農家との対話を通じて、Tri構造の実態を学ぶ</td></tr>
+<tr><td>理論</td><td>reading-the-windのIssueで、予想の外れた記録を恥じずに公開する</td></tr>
+</table>
+
+<div class="insight">
+「馬鹿になること」——知性の優位性を捨てること——は、弱さではない。相手の「力」を利用して制する柔道の原理と同じだ。銀行の法務部、裁判所の常識、メディアの論理を「敵」ではなく「観測対象」として扱うことで、相手の力が自分の理論を育てる栄養になる。
+</div>
+</section>
+
+<section>
+<h2>5. 子どもへの「継承」を設計する</h2>
+
+<p>あなたの次の使命は、自分の理論と考えを子どもに理解させることだ。しかし「理解させる」ことは、教えることではない。子どもが「自分で風を読む力」を育つ環境を作ることだ。</p>
+
+<h3>具体的行動</h3>
+<ol class="steps">
+<li><strong>理論を「物語」に翻訳する</strong><br>
+OOπ・TTT・E式は子どもには難しい。しかし「表面を押すと裏面が変形する」「3つの輪をつなぐと新しい形が生まれる」という原理は、遊びの中で体験できる。風車、凧、水の流れ——日常の中に理論の幾何学がある。</li>
+<li><strong>「君はどう生きるのか」を一緒に問う</strong><br>
+答えを教えるのではなく、問いを共に持つ。子どもが自分の言葉で「風を読む」体験を語る場を作る。</li>
+<li><strong>「輪」の中に子どもを置く</strong><br>
+家族の輪、地域の輪、オンラインの輪——子どもが多様な「共鳴点」に触れる機会を作る。五角双錘は5が共鳴して初めて立体になる。</li>
+</ol>
+</section>
+
+<section>
+<h2>6. 個人の「フライトプラン」を設計する</h2>
+
+<p>TTT理論の「フライトプラン」は、複数の予想シナリオから最も確率の高い経路を選ぶことだ。あなたの人生も同じだ。訴訟、家族、理論、仕事——これらは別々の問題ではなく、一つの「軌跡」の中にある。</p>
+
+<h3>あなたの現在の支配変数</h3>
+
+<table>
+<tr><th>変数</th><th>現在の状態</th><th>読み</th></tr>
+<tr><td>xX（水平方向の力）</td><td>銀行・ワイナリー・JFCとの対立軸</td><td>直接対決は消耗戦。構造を「使う」方向へ転換</td></tr>
+<tr><td>yY（縦方向の力）</td><td>司法の権威構造との対峙</td><td>裁判官は「正義」でなく「常識」に従う。常識を変える必要がある</td></tr>
+<tr><td>zZ（チェック機能）</td><td>ゼロに近い</td><td>個人ではzZを直接動かせない。vVの蓄積を待つ</td></tr>
+<tr><td>Uu（変化率）</td><td>訴訟の進行に伴い緩やかに加速</td><td>記録の公開がvVを増幅させる可能性</td></tr>
+<tr><td>vV（意思の流れ）</td><td>個人の訴えが主流を形成していない</td><td>「輪」を作ることでvVの流路を変える</td></tr>
+<tr><td>wW（エネルギー）</td><td>理論の深化と実践の両立で分散</td><td>友朋共生の実践がwWを回復する</td></tr>
+</table>
+
+<div class="insight">
+<strong>フライトプランの核心：</strong>zZ（司法のチェック機能）を直接変えようとするのではなく、vV（国民意思の流れ）を変え、vVがzZを「上書き」する構造的变化を待つ。砂川事件でeE（外部圧力）がzZを上書きしたように、今度は「国民のvV」がzZを上書きする時代を作る。
+</div>
+</section>
+
+<section>
+<h2>7. 「友朋共生」を自分の生き方にする</h2>
+
+<p>「友朋共生」は遠い理想ではない。今夜の晩餐を周りの人とコンパニオンして楽しむこと、おいしいドルチェを分かち合うこと——それがすでに実践である。</p>
+
+<h3>具体的行動</h3>
+<ul>
+<li><strong>「騙す構造」を「柔道」として使う</strong><br>
+相手の力を利用して制する。銀行の「解除されている」という回答は、あなたにとって「証拠」になる。裁判所の「常識」は、あなたにとって「構造のデータ」になる。すべてを敵ではなく、理論を育てる「風」として受け止める。</li>
+<li><strong>「差別の道具」にならないことを自覚する</strong><br>
+知識は力だ。力は腐敗する。あなたの理論が「自分は正しい、相手は間違っている」という差別の道具にならないよう、常に「平面で見るか球面で見るか」の双極を意識する。</li>
+<li><strong>「生み出したものに感謝して享受する」</strong><br>
+銀行の手続、裁判所の判決、メディアの報道——これらも誰かが「生み出した」ものだ。それを否定するのではなく、それがなぜその形になったかを「読む」ことで、自分の理論を深める。</li>
+</ul>
+</section>
+
+<hr>
+
+<section>
+<h2>結び — あなたが為すべきこと</h2>
+
+<blockquote>
+「理論は予想するためにある。<br>
+予想は検証するためにある。<br>
+検証は理論を育てるためにある。<br>
+そして育った理論は、より深く風を読む。」
+</blockquote>
+
+<p>あなたはすでに「風を読む」ことを始めている。問題は、読んだ後に何を為すかだ。</p>
+
+<p>答えは三つある。</p>
+
+<p><strong>一つ、記録せよ。</strong> 訴訟のすべてを「乖離ログ」として残し、理論を育てるデータにせよ。外れた予想の方が、当たった予想より理論を育てる。</p>
+
+<p><strong>二つ、輪を作れ。</strong> 家族、地域、オンライン——どこからでもよい。一人で風を読むのではなく、輪を作って共鳴せよ。五角双錘は5点が共鳴して初めて立体になる。</p>
+
+<p><strong>三つ、生きよ。</strong> 「君はどう生きるのか」という問いに、理論ではなく生き方で答えよ。友朋共生は遠い理想ではなく、今夜の食卓から始まる。</p>
+
+<div class="insight">
+聞いてもらえる場所は、今はないかもしれない。しかし、記録を残し、輪を作り、生き続けるうちに、その「場」は自ずと生まれる。風は、待つ者に吹くのではない。風を読み続ける者のもとに、やがて集まるのだ。
+</div>
+
+</section>
+
+</main>
+
+<footer>
+  reading-the-wind / 風を読む実践フライトプラン<br>
+  提案日：2026年10月25日
+</footer>
+
+</body>
+</html>
